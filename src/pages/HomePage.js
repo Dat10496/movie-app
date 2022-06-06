@@ -9,9 +9,9 @@ import {
   Stack,
 } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
-import apiService from "../app/apiService";
-import { API_KEY } from "../app/ApiKey";
+import { apiService } from "../app/apiService";
 import GenresList from "../components/GenresList";
+import { API_KEY } from "../app/apiKey";
 
 function HomePages() {
   const [storageData, setStorageData] = useState([]);
@@ -22,7 +22,7 @@ function HomePages() {
     const fetchData = async () => {
       try {
         const response = await apiService.get(
-          `/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+          `3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
         );
         const result = response.data.results;
         setStorageData(result);

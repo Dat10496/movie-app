@@ -1,17 +1,17 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { API_KEY } from "../app/ApiKey";
-import apiService from "../app/apiService";
+import { Link, useNavigate } from "react-router-dom";
+import { apiService } from "../app/apiService";
+import { API_KEY } from "../app/apiKey";
 
 function GenresList() {
   const [genresList, setGenresList] = useState([]);
-  const [genresMovie, setGenresMovie] = useState([]);
   const [genre, setGenre] = useState("");
-  console.log(genre);
+  const navigate = useNavigate();
 
-  const handleChange = () => {
-    setGenre(genresList.name);
+  const handleChange = (genre) => {
+    setGenre(genre);
+    navigate(`/genre/${genre}`);
   };
 
   useEffect(() => {
@@ -28,18 +28,6 @@ function GenresList() {
     fetchData();
   }, []);
 
-  const getListOfMovie = async (genres_id) => {
-    try {
-      const res = await apiService.get(
-        `/3/movie/${genres_id}/lists?api_key=${API_KEY}&language=en-US&page=1`
-      );
-      setGenresMovie(res.data.results);
-      setGenre(genresList);
-    } catch (error) {
-      console.log(error, "error");
-    }
-  };
-
   return (
     <>
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -49,7 +37,6 @@ function GenresList() {
           id="demo-select-small"
           value={genre}
           label="Genre"
-          onChange={handleChange}
         >
           <MenuItem value="">
             <em>None</em>
@@ -57,11 +44,11 @@ function GenresList() {
           {genresList.map((genre) => (
             <MenuItem
               key={genre.id}
-              onClick={() => getListOfMovie(genre.id)}
+              onClick={() => handleChange(genre.name)}
               value={genre.name}
-              onChange={handleChange}
-              component={Link}
-              to={`/genre/${genre.id}`}
+              // onChange={handleChange(genre.name)}
+              // component={Link}
+              // to={`/genre/${genre.name}`}
             >
               {genre.name}
             </MenuItem>

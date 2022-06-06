@@ -12,9 +12,9 @@ import {
   Typography,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import apiService from "../app/apiService";
+import { apiService } from "../app/apiService";
 import { Link } from "react-router-dom";
-import { API_KEY } from "../app/ApiKey";
+import { API_KEY } from "../app/apiKey";
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",

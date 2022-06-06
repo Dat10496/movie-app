@@ -9,11 +9,14 @@ const Router = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePages />}>
-          <Route path="/page/:page" element={<HomePages />} />
+        <Route>
+          <Route path="/" element={<HomePages />} />
+          <Route path="/genre/:name" element={<GenrePage />} />
         </Route>
+        <Route path="/genre/:name/:page" element={<GenrePage />} />
+        <Route path="/page/:page" element={<HomePages />} />
+        <Route path="/genre/:name/movie/:id" element={<MovieDetail />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
-        <Route path="/genre/:id" element={<GenrePage />} />
         <Route path="/log-in" element={<SignInPage />} />
       </Routes>
     </>
@@ -21,9 +24,3 @@ const Router = () => {
 };
 
 export default Router;
-
-/* "/?page=2" HomePage
-   "/job/:id" JobCard
-   "/login" Login
-
-*/

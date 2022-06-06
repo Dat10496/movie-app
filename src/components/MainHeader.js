@@ -8,10 +8,11 @@ import Typography from "@mui/material/Typography";
 import SearchParams from "./SearchParams";
 import MenuIcon from "@mui/icons-material/Menu";
 import LoginIcon from "@mui/icons-material/Login";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Button, InputBase, Modal, Paper } from "@mui/material";
 import useAuth from "../hooks/useAuth";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import Logo from "./Logo";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +59,8 @@ export default function MainHeader() {
   let { user, logout } = useAuth();
   let navigate = useNavigate();
   const location = useLocation();
+  const { name } = useParams();
+  console.log(name);
 
   const [openSearch, setOpenSearch] = useState(false);
   const handleOpenSearch = () => setOpenSearch(true);
@@ -71,29 +74,8 @@ export default function MainHeader() {
     <Box sx={{ flexGrow: 1, backgroundColor: "#0d253f" }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Logo />
 
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            sx={{
-              display: { xs: "none", sm: "block" },
-              color: "white",
-              textDecoration: "none",
-            }}
-            to="/page/1"
-          >
-            Movie
-          </Typography>
           <Search onClick={handleOpenSearch}>
             <StyledInputBase
               placeholder="Search…"
@@ -115,6 +97,7 @@ export default function MainHeader() {
               <SearchParams />
             </Paper>
           </Modal>
+          <p>{name}</p>
           <Box
             sx={{
               display: "flex",

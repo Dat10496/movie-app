@@ -2,10 +2,12 @@ import { React } from "react";
 
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Paper } from "@mui/material";
 
 export default function MovieCard({ movie }) {
+  const { name } = useParams();
+
   return (
     <Paper
       sx={{
@@ -18,7 +20,7 @@ export default function MovieCard({ movie }) {
       }}
       elevation={24}
       component={Link}
-      to={`movie/${movie.id}`}
+      to={name ? `/genre/${name}/movie/${movie.id}` : `movie/${movie.id}`}
       id={movie.id}
     >
       <img
