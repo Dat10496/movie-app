@@ -3,10 +3,8 @@ import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import SearchParams from "./SearchParams";
-import MenuIcon from "@mui/icons-material/Menu";
 import LoginIcon from "@mui/icons-material/Login";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Button, InputBase, Modal, Paper } from "@mui/material";
@@ -60,7 +58,6 @@ export default function MainHeader() {
   let navigate = useNavigate();
   const location = useLocation();
   const { name } = useParams();
-  console.log(name);
 
   const [openSearch, setOpenSearch] = useState(false);
   const handleOpenSearch = () => setOpenSearch(true);

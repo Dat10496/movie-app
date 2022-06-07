@@ -9,23 +9,18 @@ import {
   CardContent,
   CardMedia,
   Container,
-  Paper,
+  Rating,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
-
 import LoadingScreen from "./LoadingScreen";
 import { apiService } from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
-import { uriTransformer } from "react-markdown";
-import { Box } from "@mui/system";
-import StarRateIcon from "@mui/icons-material/StarRate";
 
 export default function MovieDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [storageData, setStorageData] = useState([]);
   const { id } = useParams();
-  console.log(storageData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,10 +46,10 @@ export default function MovieDetail() {
       <Container
         sx={{
           width: "100%",
-          maxWidth: 360,
+          height: "100%",
           borderRadius: 3,
           p: 1,
-          mt: 2,
+          m: 2,
         }}
       >
         {loading ? (
@@ -68,43 +63,93 @@ export default function MovieDetail() {
                 <Card
                   sx={{
                     fullWidth: "100%",
-                    height: 550,
+                    fullHeight: "100%",
                     p: 3,
-                    backgroundColor: "#edede8",
+                    backgroundColor: "#e6d3a5",
                   }}
                 >
-                  <CardActionArea sx={{ display: "flex" }}>
+                  <CardActionArea
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
                     <CardMedia
                       component="img"
-                      height="500"
-                      image={`https://image.tmdb.org/t/p/w500${storageData.belongs_to_collection.poster_path}`}
-                      alt="green iguana"
+                      height="600"
+                      image={`https://image.tmdb.org/t/p/w500${storageData.poster_path}`}
+                      alt={storageData.title}
                     />
-                    <CardContent>
-                      <Typography
-                        sx={{ fontFamily: "Comic Sans M", fontStyle: "bold" }}
-                        variant="h4"
-                        component="div"
+
+                    <Grid item xs={12} md={6}>
+                      <CardContent
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          color: "",
+                          p: 1,
+                        }}
                       >
-                        {storageData.original_title}
-                      </Typography>
-                      <Typography gutterBottom variant="h4" component="div">
-                        {storageData.release_date}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {storageData.overview}
-                      </Typography>
-                      <Typography
-                        sx={{ display: "flex", alignItems: "center" }}
-                        component="div"
-                      >
-                        Vote Rate: {storageData.vote_average}{" "}
-                        <StarRateIcon fontSize="large" />
-                      </Typography>
-                    </CardContent>
+                        <Typography
+                          sx={{
+                            fontFamily: "Poppins",
+                            fontWeight: "bold",
+                            fontSize: 35,
+                            m: 1,
+                          }}
+                          variant="h3"
+                        >
+                          {storageData.original_title}
+                          <Divider />
+                        </Typography>
+                        <Typography
+                          sx={{
+                            fontFamily: "Raleway",
+                            fontSize: 15,
+                            fontStyle: "italic",
+                            m: 1,
+                          }}
+                          variant="subtitle2"
+                          component="div"
+                        >
+                          Date Release: {storageData.release_date}
+                        </Typography>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            fontFamily: "Ubuntu",
+                            fontWeight: "bold",
+                            m: 1,
+                          }}
+                        >
+                          Overview
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          sx={{ fontFamily: "Ubuntu", ml: 1 }}
+                        >
+                          {storageData.overview}
+                        </Typography>
+
+                        <Rating
+                          value={storageData.vote_average}
+                          precision={0.1}
+                          readOnly
+                          max={10}
+                          m={1}
+                        />
+                        <Typography
+                          variant="body2"
+                          sx={{ color: "text.secondary", ml: 1 }}
+                        >
+                          ({storageData.vote_count} reviews)
+                        </Typography>
+                      </CardContent>
+                    </Grid>
                   </CardActionArea>
                 </Card>
-
                 {!storageData && (
                   <Typography variant="h6">404 Movie not found!</Typography>
                 )}

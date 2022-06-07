@@ -10,14 +10,17 @@ const Router = () => {
     <>
       <Routes>
         <Route>
-          <Route path="/" element={<HomePages />} />
+          <Route index element={<HomePages />} />
           <Route path="/genre/:name" element={<GenrePage />} />
         </Route>
-        <Route path="/genre/:name/:page" element={<GenrePage />} />
-        <Route path="/page/:page" element={<HomePages />} />
-        <Route path="/genre/:name/movie/:id" element={<MovieDetail />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
-        <Route path="/log-in" element={<SignInPage />} />
+        <Route>
+          <Route path="/genre/:name/:page" element={<GenrePage />} />
+          <Route path="/genre/:name/movie/:id" element={<MovieDetail />} />
+          <Route path="/page/:page" element={<HomePages />} />
+          <Route path="/page/:page/movie/:id" element={<MovieDetail />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/log-in" element={<SignInPage />} />
+        </Route>
       </Routes>
     </>
   );

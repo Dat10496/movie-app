@@ -4,7 +4,7 @@ import MainHeader from "./components/MainHeader";
 import { CssBaseline } from "@mui/material";
 import Router from "./routes/Router";
 import { AuthProvider } from "./contexts/AuthContext.js";
-import { purple, indigo } from "@mui/material/colors";
+
 
 const theme = createTheme({
   palette: {

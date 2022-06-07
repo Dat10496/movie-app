@@ -37,7 +37,7 @@ function HomePages() {
 
   return (
     <>
-      <Container sx={{ minHeight: "100vh", mt: 3 }}>
+      <Container sx={{ minHeight: "100vh", mt: 3, fullWidth: "100%" }}>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Stack>
             <GenresList />
@@ -49,11 +49,11 @@ function HomePages() {
               maxHeight: "100%",
               flexWrap: "wrap",
               justifyContent: "flex-end",
-              p: 0,
+              p: 1,
             }}
           >
             {storageData.map((movie) => (
-              <Grid key={movie.id} item xs={12} md={6}>
+              <Grid key={movie.id} item xs={12} md={4}>
                 <MovieCard movie={movie} />
               </Grid>
             ))}

@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { apiService } from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
 
@@ -46,9 +46,6 @@ function GenresList() {
               key={genre.id}
               onClick={() => handleChange(genre.name)}
               value={genre.name}
-              // onChange={handleChange(genre.name)}
-              // component={Link}
-              // to={`/genre/${genre.name}`}
             >
               {genre.name}
             </MenuItem>

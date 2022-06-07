@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from "react";
-import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Link, useParams } from "react-router-dom";
@@ -9,7 +8,6 @@ import {
   Container,
   Pagination,
   PaginationItem,
-  Paper,
 } from "@mui/material";
 import LoadingScreen from "../components/LoadingScreen";
 import { apiService } from "../app/apiService";
