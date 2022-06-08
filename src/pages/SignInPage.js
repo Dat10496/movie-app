@@ -58,7 +58,7 @@ function SignInPage() {
       sx={{
         position: "fixed",
         top: 0,
-        backgroundColor: "#2b2b2b	",
+        backgroundColor: "#0d253f	",
         height: "100%",
         width: "100%",
         m: 0,

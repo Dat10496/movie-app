@@ -2,19 +2,12 @@ import { React, useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import {
-  Alert,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Container,
-  Rating,
-} from "@mui/material";
+import { Alert, Card, Container, Rating } from "@mui/material";
 import { useParams } from "react-router-dom";
 import LoadingScreen from "./LoadingScreen";
 import { apiService } from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
+import { Box } from "@mui/system";
 
 export default function MovieDetail() {
   const [loading, setLoading] = useState(true);
@@ -62,35 +55,33 @@ export default function MovieDetail() {
               <>
                 <Card
                   sx={{
-                    fullWidth: "100%",
-                    fullHeight: "100%",
-                    p: 3,
                     backgroundColor: "#e6d3a5",
                   }}
                 >
-                  <CardActionArea
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <CardMedia
-                      component="img"
-                      height="600"
-                      image={`https://image.tmdb.org/t/p/w500${storageData.poster_path}`}
-                      alt={storageData.title}
-                    />
-
+                  <Grid container>
                     <Grid item xs={12} md={6}>
-                      <CardContent
-                        sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "space-between",
-                          color: "",
-                          p: 1,
-                        }}
+                      <Box p={2}>
+                        <Box
+                          sx={{
+                            borderRadius: 4,
+                            overflow: "hidden",
+                            display: "flex",
+                            width: 300,
+                            justifyContent: "space-evenly",
+                          }}
+                        >
+                          <Box
+                            component="img"
+                            sx={{ height: 500 }}
+                            src={`https://image.tmdb.org/t/p/w500${storageData.poster_path}`}
+                            alt={storageData.title}
+                          />
+                        </Box>
+                      </Box>
+                    </Grid>
+                    <Grid item sx={12} md={6}>
+                      <Box
+                        sx={{ position: "relative", right: "20%", top: "20%" }}
                       >
                         <Typography
                           sx={{
@@ -146,9 +137,9 @@ export default function MovieDetail() {
                         >
                           ({storageData.vote_count} reviews)
                         </Typography>
-                      </CardContent>
+                      </Box>
                     </Grid>
-                  </CardActionArea>
+                  </Grid>
                 </Card>
                 {!storageData && (
                   <Typography variant="h6">404 Movie not found!</Typography>

@@ -8,11 +8,13 @@ import {
   Container,
   Pagination,
   PaginationItem,
+  Stack,
 } from "@mui/material";
 import LoadingScreen from "../components/LoadingScreen";
 import { apiService } from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
 import MovieCard from "../components/MovieCard";
+import GenresList from "../components/GenresList";
 
 export default function GenrePage() {
   const [loading, setLoading] = useState(true);
@@ -62,8 +64,10 @@ export default function GenrePage() {
               <>
                 {" "}
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                  <Stack>
+                    <GenresList />
+                  </Stack>
                   <Box
-                    label={name}
                     sx={{
                       display: "flex",
                       maxWidth: "100%",
@@ -74,7 +78,7 @@ export default function GenrePage() {
                     }}
                   >
                     {storageData.map((movie) => (
-                      <Grid key={movie.id} item xs={12} md={5}>
+                      <Grid key={movie.id} item xs={12} md={4}>
                         <MovieCard movie={movie} />
                       </Grid>
                     ))}
