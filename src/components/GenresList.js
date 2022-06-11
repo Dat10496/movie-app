@@ -46,6 +46,7 @@ function GenresList() {
               key={genre.id}
               onClick={() => handleChange(genre.name)}
               value={genre.name}
+              sx={{ color: "#0d253f" }}
             >
               {genre.name}
             </MenuItem>

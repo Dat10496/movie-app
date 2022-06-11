@@ -107,7 +107,8 @@ export default function MainHeader() {
             {user ? (
               <>
                 <AccountCircle sx={{ mr: 1 }} />
-                {user.username}{" "}
+                <Typography mr={1}>Welcome</Typography>
+                {user.username}!!{" "}
               </>
             ) : (
               ""

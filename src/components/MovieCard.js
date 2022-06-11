@@ -16,8 +16,8 @@ export default function MovieCard({ movie }) {
         display: "flex",
         textDecoration: "none",
         justifyContent: "flex-start",
-        p: 0.5,
-        borderRadius: 3,
+        p: 0,
+        borderRadius: 5,
       }}
       component={Link}
       to={name ? `/genre/${name}/movie/${movie.id}` : `movie/${movie.id}`}
@@ -28,7 +28,7 @@ export default function MovieCard({ movie }) {
         alt={movie.title}
       />
 
-      <Box>
+      <Box p={1}>
         <Typography
           sx={{
             fontFamily: "Rubik",

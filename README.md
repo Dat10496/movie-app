@@ -1,7 +1,7 @@
 # THE MOVIE APP
 
 - link to the app (deployment)
-- subtitle: whats this app about?
+- subtitle: Movie App
 - main feature: what can you do with this app?
 - add screen shot
 - add video
@@ -16,13 +16,11 @@
 
 ### TODOLIST
 
-* [ ] search
-* [ ] movie detail
-* [ ] login
-* [ ] etc...
+- [ ] search
+- [ ] movie detail
+- [ ] login
+- [ ] etc...
 
-
-- difficulty?
-- lesson learn
-- feature that are nice to have but do not have time?
-
+* difficulty?
+* lesson learn
+* feature that are nice to have but do not have time?
