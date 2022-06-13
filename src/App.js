@@ -5,7 +5,6 @@ import { CssBaseline } from "@mui/material";
 import Router from "./routes/Router";
 import { AuthProvider } from "./contexts/AuthContext.js";
 
-
 const theme = createTheme({
   palette: {
     primary: {

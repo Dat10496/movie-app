@@ -1,11 +1,8 @@
 import axios from "axios";
-import { BASE_URL, BASE_API } from "./config";
-
-const apiKey = `${BASE_API}`;
-// console.log(apiKey);
+import { BASE_URL } from "./config";
 
 const apiService = axios.create({
   baseURL: BASE_URL,
 });
 
-export { apiService, apiKey };
+export { apiService };
