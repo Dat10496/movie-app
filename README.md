@@ -1,28 +1,27 @@
 # THE MOVIE APP
 
-- link to the app (deployment)
-- subtitle: whats this app about?
-- main feature: what can you do with this app?
-- add screen shot
-- add video
+- link to the app: https://routing-jobs-app.netlify.app/
+- subtitle: Jobs-Routing-App
+- main feature: "This is a practice with React framework. Get API and showing jobs about IT jobs "
+- Option: You can search by name..
 
 ## HOW TO START
 
 - install nodejs 18
-- get api key, change env.example to .env
-- in the app directory, run: `npm install && npm start`
+- in the app directory
+
+* first run : `json-server --watch jobs.json --port 5000` to get fake API
+* then run: `npm install && npm start`
 
 ## DEVELOPMENT LOGS
 
 ### TODOLIST
 
-* [ ] search
-* [ ] movie detail
-* [ ] login
-* [ ] etc...
+- [ ] search
+- [ ] movie detail
+- [ ] login
+- [ ] etc...
 
-
-- difficulty?
-- lesson learn
-- feature that are nice to have but do not have time?
-
+* difficulty?
+* lesson learn
+* feature that are nice to have but do not have time?
