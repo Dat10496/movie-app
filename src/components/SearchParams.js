@@ -64,7 +64,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 
-function SearchParams() {
+function SearchParams({ handleCloseSearch }) {
   let [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState("");
 
@@ -133,6 +133,7 @@ function SearchParams() {
             component={Link}
             to={`/movie/${movie.id}`}
             sx={{ textDecoration: "none", color: "white" }}
+            onClick={handleCloseSearch}
           >
             {movie.title}
           </Typography>

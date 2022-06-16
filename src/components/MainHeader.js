@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SearchParams from "./SearchParams";
 import LoginIcon from "@mui/icons-material/Login";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button, InputBase, Modal, Paper } from "@mui/material";
 import useAuth from "../hooks/useAuth";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -57,7 +57,6 @@ export default function MainHeader() {
   let { user, logout } = useAuth();
   let navigate = useNavigate();
   const location = useLocation();
-  const { name } = useParams();
 
   const [openSearch, setOpenSearch] = useState(false);
   const handleOpenSearch = () => setOpenSearch(true);
@@ -80,8 +79,8 @@ export default function MainHeader() {
             />
           </Search>
           <Modal
-            open={openSearch}
             onClose={handleCloseSearch}
+            open={openSearch}
             sx={{
               width: 500,
               height: 500,
@@ -91,10 +90,10 @@ export default function MainHeader() {
             }}
           >
             <Paper elevation={24} sx={style} mt={0.5}>
-              <SearchParams />
+              <SearchParams handleCloseSearch={handleCloseSearch} />
             </Paper>
           </Modal>
-          <p>{name}</p>
+
           <Box
             sx={{
               display: "flex",
