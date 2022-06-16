@@ -5,7 +5,7 @@ import Divider from "@mui/material/Divider";
 import { Alert, Card, Container, Rating } from "@mui/material";
 import { useParams } from "react-router-dom";
 import LoadingScreen from "./LoadingScreen";
-import { apiService } from "../app/apiService";
+import apiService from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
 import { Box } from "@mui/system";
 

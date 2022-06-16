@@ -11,7 +11,7 @@ import {
   Stack,
 } from "@mui/material";
 import LoadingScreen from "../components/LoadingScreen";
-import { apiService } from "../app/apiService";
+import apiService from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
 import MovieCard from "../components/MovieCard";
 import GenresList from "../components/GenresList";

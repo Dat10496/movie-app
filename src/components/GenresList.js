@@ -1,7 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { apiService } from "../app/apiService";
+import apiService from "../app/apiService";
 import { API_KEY } from "../app/apiKey";
 
 function GenresList() {

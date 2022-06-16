@@ -5,4 +5,4 @@ const apiService = axios.create({
   baseURL: BASE_URL,
 });
 
-export { apiService };
+export default apiService;

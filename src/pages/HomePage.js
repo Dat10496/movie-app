@@ -9,7 +9,7 @@ import {
   Stack,
 } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
-import { apiService } from "../app/apiService";
+import apiService from "../app/apiService";
 import GenresList from "../components/GenresList";
 import { API_KEY } from "../app/apiKey";
 

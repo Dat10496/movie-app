@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Paper, alpha, Divider, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { apiService } from "../app/apiService";
+import apiService from "../app/apiService";
 import { Link } from "react-router-dom";
 import { API_KEY } from "../app/apiKey";
 import { Box } from "@mui/system";
