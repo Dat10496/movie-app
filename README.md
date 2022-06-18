@@ -1,17 +1,15 @@
 # THE MOVIE APP
 
-- link to the app: https://routing-jobs-app.netlify.app/
-- subtitle: Jobs-Routing-App
-- main feature: "This is a practice with React framework. Get API and showing jobs about IT jobs "
-- Option: You can search by name..
+- link to the app: https://application-movies.netlify.app/
+- subtitle: movies-application
+- main feature: "You can search many movie and read detail about it. Such as: Rating, Day release, Overview,.. "
+- Option: You can search by genre, name,..
 
 ## HOW TO START
 
 - install nodejs 18
-- in the app directory
-
-* first run : `json-server --watch jobs.json --port 5000` to get fake API
-* then run: `npm install && npm start`
+- get api key, change env.example to .env
+- in the app directory, run: `npm install && npm start`
 
 ## DEVELOPMENT LOGS
 
