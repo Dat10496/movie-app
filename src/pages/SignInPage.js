@@ -72,7 +72,7 @@ function SignInPage() {
           p: 1,
           width: 700,
           height: 400,
-          backgroundColor: "#4b4f4f",
+          backgroundColor: "white",
         }}
       >
         <Box sx={style}>
