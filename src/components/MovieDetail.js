@@ -63,11 +63,12 @@ export default function MovieDetail() {
                       <Box p={2}>
                         <Box
                           sx={{
-                            borderRadius: 4,
+                            borderRadius: 5,
                             overflow: "hidden",
                             display: "flex",
                             width: 300,
                             justifyContent: "space-evenly",
+                            ml: 3,
                           }}
                         >
                           <Box
@@ -79,10 +80,9 @@ export default function MovieDetail() {
                         </Box>
                       </Box>
                     </Grid>
+
                     <Grid item sx={12} md={6}>
-                      <Box
-                        sx={{ position: "relative", right: "20%", top: "20%" }}
-                      >
+                      <Box sx={{ m: 3 }}>
                         <Typography
                           sx={{
                             fontFamily: "Poppins",

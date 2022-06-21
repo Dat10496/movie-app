@@ -12,15 +12,11 @@ import { Link, useParams } from "react-router-dom";
 import apiService from "../app/apiService";
 import GenresList from "../components/GenresList";
 import { API_KEY } from "../app/apiKey";
-import { BASE_API, BASE_URL } from "../app/config";
 
 function HomePages() {
   const [storageData, setStorageData] = useState([]);
   const [totalPage, setTotalPage] = useState();
   const { page } = useParams();
-  const api = process.env.API_KEY;
-
-  console.log(api, "api");
 
   useEffect(() => {
     const fetchData = async () => {
