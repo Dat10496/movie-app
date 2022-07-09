@@ -8,8 +8,8 @@
 ## HOW TO START
 
 - install nodejs 18
-- get api key, change env.example to .env
 - in the app directory, run: `npm install && npm start`
+
 
 ## DEVELOPMENT LOGS
 
